@@ -1,0 +1,505 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Kalam', cursive;
+    background-color: #ffffff;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+}
+
+/* Decorative Elements */
+.decorative-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Photo Garland */
+.photo-garland {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 2;
+}
+
+.photo-frame {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #d1d5db;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9fafb;
+    font-size: 12px;
+}
+
+/* Flowers */
+.flower {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.flower.pink {
+    background-color: #fce7f3;
+    border: 2px solid #f9a8d4;
+}
+
+.flower.teal {
+    background-color: #ccfbf1;
+    border: 2px solid #5eead4;
+}
+
+.flower.top-left {
+    top: 40px;
+    left: 20px;
+}
+
+.flower.top-left-2 {
+    top: 60px;
+    left: 40px;
+}
+
+.flower.top-right {
+    top: 40px;
+    right: 20px;
+}
+
+.flower.top-right-2 {
+    top: 60px;
+    right: 40px;
+}
+
+.flower.bottom-right {
+    bottom: 40px;
+    right: 20px;
+}
+
+.flower.bottom-right-2 {
+    bottom: 60px;
+    right: 40px;
+}
+
+/* Squiggly Lines */
+.squiggly-line {
+    position: absolute;
+    height: 3px;
+    border-radius: 2px;
+}
+
+.squiggly-line.teal {
+    background-color: #5eead4;
+}
+
+.squiggly-line.yellow {
+    background-color: #fde047;
+}
+
+.squiggly-line.main {
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    animation: wave 3s ease-in-out infinite;
+}
+
+.squiggly-line.bottom-left {
+    bottom: 20px;
+    left: 20px;
+    width: 60px;
+    animation: wave 2s ease-in-out infinite reverse;
+}
+
+.squiggly-line.bottom-left-2 {
+    bottom: 10px;
+    left: 30px;
+    width: 40px;
+    animation: wave 2.5s ease-in-out infinite;
+}
+
+@keyframes wave {
+    0%, 100% { transform: scaleX(1); }
+    50% { transform: scaleX(1.2); }
+}
+
+/* Main Title */
+.main-title {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Main Content */
+.main-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+/* To Do Section */
+.todo-section {
+    background-color: #fce7f3;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.todo-section .section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.todo-list {
+    margin-bottom: 20px;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.todo-item:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    transform: translateY(-2px);
+}
+
+.todo-checkbox {
+    width: 20px;
+    height: 20px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.todo-text {
+    flex: 1;
+    font-size: 1rem;
+    color: #374151;
+    cursor: pointer;
+    min-height: 20px;
+}
+
+.todo-text.completed {
+    text-decoration: line-through;
+    color: #9ca3af;
+}
+
+.edit-btn, .delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.edit-btn:hover, .delete-btn:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.add-todo {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.todo-input {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #f9a8d4;
+    border-radius: 10px;
+    font-family: 'Kalam', cursive;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.todo-input:focus {
+    border-color: #ec4899;
+}
+
+.add-btn {
+    background-color: #f9a8d4;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 20px;
+    font-family: 'Kalam', cursive;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-btn:hover {
+    background-color: #ec4899;
+}
+
+/* Right Sections */
+.right-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Notes Section */
+.notes-section {
+    background-color: #fed7aa;
+    border-radius: 15px;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.washi-tape {
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 15px;
+    background: repeating-linear-gradient(
+        45deg,
+        #f9a8d4,
+        #f9a8d4 5px,
+        #ffffff 5px,
+        #ffffff 10px
+    );
+    border-radius: 0 0 5px 5px;
+}
+
+.notes-section .section-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.heart {
+    position: absolute;
+    font-size: 1rem;
+}
+
+.heart-top-right {
+    top: 15px;
+    right: 15px;
+}
+
+.heart-bottom-left {
+    bottom: 15px;
+    left: 15px;
+}
+
+.notes-textarea {
+    width: 100%;
+    height: 120px;
+    border: none;
+    background-color: transparent;
+    font-family: 'Kalam', cursive;
+    font-size: 0.9rem;
+    color: #374151;
+    resize: none;
+    outline: none;
+    padding: 10px;
+}
+
+/* Focus Section */
+.focus-section {
+    background-color: #dbeafe;
+    border-radius: 15px;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.paper-clip {
+    position: absolute;
+    top: -5px;
+    width: 20px;
+    height: 15px;
+    background-color: #f9a8d4;
+    border-radius: 0 0 10px 10px;
+}
+
+.paper-clip.left {
+    left: 20px;
+}
+
+.paper-clip.right {
+    right: 20px;
+}
+
+.focus-section .section-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.focus-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.focus-input {
+    width: 100%;
+    padding: 8px;
+    border: 2px solid #93c5fd;
+    border-radius: 8px;
+    font-family: 'Kalam', cursive;
+    font-size: 0.9rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.focus-input:focus {
+    border-color: #3b82f6;
+}
+
+/* Remember Section */
+.remember-section {
+    background-color: #0d9488;
+    border-radius: 15px;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.remember-section .section-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #f0fdfa;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.lightbulb {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.2rem;
+}
+
+.remember-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.remember-item {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.remember-input {
+    flex: 1;
+    padding: 8px;
+    border: 2px solid #14b8a6;
+    border-radius: 8px;
+    font-family: 'Kalam', cursive;
+    font-size: 0.9rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #374151;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.remember-input:focus {
+    border-color: #0d9488;
+}
+
+.add-remember-btn {
+    background-color: #14b8a6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-family: 'Kalam', cursive;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-remember-btn:hover {
+    background-color: #0d9488;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .main-title {
+        font-size: 2rem;
+    }
+    
+    .container {
+        padding: 10px;
+    }
+    
+    .todo-section {
+        padding: 20px;
+    }
+    
+    .right-sections {
+        gap: 15px;
+    }
+}
+
+/* Animation for new items */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.todo-item.new {
+    animation: slideIn 0.5s ease-out;
+}

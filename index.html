@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Decorative elements -->
+        <div class="decorative-elements">
+            <div class="photo-garland">
+                <div class="photo-frame">❤️</div>
+                <div class="photo-frame">👤</div>
+                <div class="photo-frame">🏞️</div>
+                <div class="photo-frame">👤</div>
+            </div>
+            <div class="flowers">
+                <div class="flower pink top-left"></div>
+                <div class="flower teal top-left-2"></div>
+                <div class="flower pink top-right"></div>
+                <div class="flower teal top-right-2"></div>
+                <div class="flower pink bottom-right"></div>
+                <div class="flower teal bottom-right-2"></div>
+            </div>
+            <div class="squiggly-lines">
+                <div class="squiggly-line teal main"></div>
+                <div class="squiggly-line teal bottom-left"></div>
+                <div class="squiggly-line yellow bottom-left-2"></div>
+            </div>
+        </div>
+
+        <!-- Main Title -->
+        <h1 class="main-title">To Do list</h1>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- To Do List Section -->
+            <div class="todo-section">
+                <h2 class="section-title">To Do list</h2>
+                <div class="todo-list">
+                    <div class="todo-item">
+                        <input type="checkbox" id="todo-1" class="todo-checkbox">
+                        <label for="todo-1" class="todo-text"></label>
+                        <button class="edit-btn" onclick="editTodo(1)">✏️</button>
+                        <button class="delete-btn" onclick="deleteTodo(1)">🗑️</button>
+                    </div>
+                </div>
+                <div class="add-todo">
+                    <input type="text" id="new-todo" placeholder="Add new task..." class="todo-input">
+                    <button onclick="addTodo()" class="add-btn">+</button>
+                </div>
+            </div>
+
+            <!-- Right Side Sections -->
+            <div class="right-sections">
+                <!-- Notes Section -->
+                <div class="notes-section">
+                    <div class="washi-tape"></div>
+                    <h3 class="section-title">Notes</h3>
+                    <div class="heart heart-top-right">💖</div>
+                    <div class="heart heart-bottom-left">💖</div>
+                    <textarea id="notes-text" placeholder="Write your notes here..." class="notes-textarea"></textarea>
+                </div>
+
+                <!-- Focus Section -->
+                <div class="focus-section">
+                    <div class="paper-clip left"></div>
+                    <div class="paper-clip right"></div>
+                    <h3 class="section-title">Focus</h3>
+                    <div class="focus-items">
+                        <input type="text" id="focus-1" placeholder="Focus item 1" class="focus-input">
+                        <input type="text" id="focus-2" placeholder="Focus item 2" class="focus-input">
+                        <input type="text" id="focus-3" placeholder="Focus item 3" class="focus-input">
+                    </div>
+                </div>
+
+                <!-- Remember Section -->
+                <div class="remember-section">
+                    <h3 class="section-title">Remember</h3>
+                    <div class="lightbulb">💡</div>
+                    <div class="remember-items">
+                        <div class="remember-item">
+                            <input type="text" id="remember-1" placeholder="Remember this..." class="remember-input">
+                            <button class="add-remember-btn" onclick="addRememberItem()">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
