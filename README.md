@@ -26,9 +26,9 @@ A delightful, pastel-themed todo list application inspired by aesthetic planner 
 **Purpose**: Important information to keep handy
 
 ## Techstack
-- Html
-- Css
-- Javascript
+- HTML
+- CSS
+- JavaScript
 
 ### Browser Support
 Works on all modern browsers:
