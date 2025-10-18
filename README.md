@@ -25,7 +25,7 @@ A delightful, pastel-themed todo list application inspired by aesthetic planner 
 ### 💡 **Remember** (Teal Section)
 **Purpose**: Important information to keep handy
 
-## Techstack
+## Tech Stack
 - HTML
 - CSS
 - JavaScript
