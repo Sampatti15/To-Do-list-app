@@ -37,4 +37,5 @@ Works on all modern browsers:
 
   **Enjoy staying organized! 📝✨**
 
-##
+<img width="1867" height="899" alt="picture" src="https://github.com/user-attachments/assets/5d3fb185-15b9-43f5-9322-3ef1b662621c" />
+
